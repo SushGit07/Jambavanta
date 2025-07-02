@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css" />
+
+  <title>Donate Us | Jambavant Foundation</title>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .desc,
+    .desc1 {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      padding-left: 6rem;
+      margin-top: 6rem;
+    }
+
+    .desc2 {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      padding-left: 6rem;
+      /* margin-top: 6rem; */
+      background-color: #f7f7f7;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .desc,
+      .desc1,
+      .desc2 {
+        margin-top: 0;
+        padding-left: 1rem;
+      }
+    }
+
+    .btn2 {
+      background-color: #7e4555;
+      font-size: 16px;
+      font-weight: 400;
+      color: white;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      padding: 1rem;
+      border-radius: 50px;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn2:hover {
+      cursor: pointer;
+      background-color: crimson;
+      transform: scale(1.05);
+    }
+
+    .donation-card-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      max-width: 90%;
+      margin: 40px auto;
+    }
+
+    .donation-card {
+      perspective: 1000px;
+    }
+
+    .donation-card-inner {
+      position: relative;
+      width: 100%;
+      height: 220px;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .donation-card:hover .donation-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .donation-card-front,
+    .donation-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      font-size: 2rem;
+      padding: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .donation-card-front {
+      background-image: url("./images/donation_img.webp");
+      background-size: cover;
+      background-position: center right;
+      color: black;
+      opacity: 0.7;
+    }
+
+    .donation-card-back {
+      background-color: #f8f8f8;
+      color: #333;
+      transform: rotateY(180deg);
+      font-size: 1rem;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+
+    .extra-center {
+      margin: 40px auto;
+      width: 400px;
+      margin-left: 10rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      .donation-card-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .donation-card-inner {
+        height: 200px;
+      }
+
+      .extra-center {
+        width: 90%;
+        margin: 0 auto;
+      }
+    }
+
+
+
+    .column {
+      float: left;
+      width: 50%;
+
+      @media screen and (min-width: 320px) and (max-width: 768px) {
+        width: 100%;
+      }
+    }
+
+    .donate-now-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .qr-section {
+      flex: 1;
+      min-width: 280px;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    .qr-section h2 {
+      font-family: Georgia, serif;
+      color: #3d1e2c;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .qr-img {
+      width: 220px;
+      height: 220px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .qr-section p {
+      text-align: left;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      color: #333;
+      padding-left: 1rem;
+    }
+
+    .qr-section p strong {
+      color: #3d1e2c;
+    }
+
+    .donation-form {
+      flex: 1;
+      min-width: 280px;
+      max-width: 600px;
+    }
+
+    .donation-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .donation-form label {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .donation-form input,
+    .donation-form select {
+      padding: 1rem;
+      background: #f5f5f5;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .donation-form button {
+      background: #703b4c;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Responsive layout for small screens */
+    @media (max-width: 768px) {
+      .donate-now-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .qr-section,
+      .donation-form {
+        width: 100%;
+        max-width: 90%;
+      }
+
+      .qr-section p {
+        text-align: center;
+        padding-left: 0;
+      }
+    }
+
+    #seven_bg {
+      background-image: url("./images/testinomial_bg.jpg");
+      width: 100%;
+      height: auto;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.9;
+      padding: 3rem 1rem;
+      box-sizing: border-box;
+    }
+
+    .Testimonial {
+      color: #44233b;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      width: 30%;
+      font-size: 40px;
+      margin-left: 15rem;
+    }
+
+    .card-container_1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: rgb(236, 226, 208);
+      height: auto;
+      min-height: 250px;
+      padding: 1.5rem;
+      font-weight: 500;
+      border: 2px solid #444;
+      border-radius: 10px;
+      box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 20px 17px 28px rgba(0, 0, 0, 0.3);
+    }
+
+    /* 📱 Responsive for smaller screens */
+    @media (max-width: 768px) {
+      .card-container_1 {
+        grid-template-columns: 1fr;
+        /* stack cards */
+        gap: 1.5rem;
+      }
+
+      .card {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+
+      #seven_bg {
+        padding: 2rem 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .Testimonial {
+        width: 100%;
+        font-size: 28px;
+        margin-left: 0;
+        text-align: left;
+      }
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding: 4rem 5rem;
+      background-image: url(".//images/footter_bgimg.jpeg");
+      width: 87%;
+      height: 500px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: "Segoe UI", sans-serif;
+    }
+  </style>
+  <script src="./jambavanta.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar pagination">
+    <img src=".//images/logo.jpg" alt="Logo" class="logo" />
+    <div id="navbar-elements">
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_home.html">Home</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_about.html">About us</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_projects.html">Projects</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_media.html">Media</a>
+      <a class="active" href="">Donate us</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_contact.html">Contact us</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_getinvolved.html">Get Involved</a>
+      <button onclick="navigateToDonateNow()" class="donate-now-btn">
+        Donate Now
+      </button>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_about.html">About</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_projects.html">Projects</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_media.html">Media</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_donate.html">Donate</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_contact.html">Contact</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_getinvolved.html">Get Involved</a>
+    </div>
+    <div id="hamburger" onclick="openNav()">&#9776;</div>
+  </nav>
+
+  <div class="common-first-image basic-div-section">
+    <div class="heading-wrapper">
+      <h1 class="heading">
+        Donate Us | Jambavant Foundation
+      </h1>
+    </div>
+  </div>
+
+  <div style="text-align: center">
+    <h1 style="
+          font-size: 3rem;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+            'Lucida Sans', Arial, sans-serif;
+          padding-top: 3rem;
+        ">
+      Serve Humanity, Serve God: Your Generosity Transforms Lives
+    </h1>
+  </div>
+  <div class="desc">
+    <h3 style="font-size: 45px; font-family: abril fatface;color: #703b4c;">Introduction</h3>
+    <p>
+      <i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“Service to man is service to God.” </i><b style="font-size: 20px"> - Swami Vivekananda</b>
+    </p>
+    <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 25px;
+          color: #777;
+        ">
+      At the Jambavanta Foundation, we are inspired by the profound teachings
+      of Swami Vivekananda, who believed that true spirituality is expressed
+      through selfless service. By donating to our foundation, you are not
+      just supporting a cause; you are participating in a sacred act of
+      service that uplifts humanity and honors the divine within each of us.
+    </p>
+
+    <h3 style="font-size: 45px; font-family: abril fatface;color: #703b4c;">Why Donate?</h3>
+    <h3>Make a Difference, One Life at a Time</h3>
+    <p>
+      <i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“Do not wait for anybody or anything. Do whatever you can. Build your
+        hope on none.” </i><b style="font-size: 20px"> - Swami Vivekananda</b>
+    </p>
+    <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 15px;
+          color: #777;
+        ">
+      Your contribution helps us empower individuals to realize their
+      potential and build stronger communities. Every donation, no matter the
+      size, enables us to extend our reach and deepen our impact.
+    </p>
+    <h3>Empower Through Education:</h3>
+    <p>
+      <i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“Education is the manifestation of the perfection already in man.” </i><b style="font-size: 20px"> - Swami
+        Vivekananda</b>
+    </p>
+    <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 15px;
+          color: #777;
+        ">
+      Your support provides educational opportunities that open doors to
+      knowledge and growth, fostering a brighter future for children and
+      adults alike.
+    </p>
+    <h3>Foster Spiritual Growth:</h3>
+    <p>
+      <i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“The greatest religion is to be true to your own nature. Have faith
+        in yourselves!” </i><b style="font-size: 20px"> - Swami Vivekananda</b>
+    </p>
+    <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 15px;
+          color: #777;
+        ">
+      Your donation helps us organize spiritual programs and events that
+      inspire individuals to discover their inner strength and live with
+      purpose.
+    </p>
+    <h3>Foster Spiritual Growth:</h3>
+    <p>
+      <i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“You cannot believe in God until you believe in yourself.” </i><b style="font-size: 20px"> - Swami
+        Vivekananda</b>
+    </p>
+    <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 15px;
+          color: #777;
+        ">
+      Your generosity supports initiatives that bring communities together,
+      creating a sense of belonging and shared purpose.
+    </p>
+    <h3 style="font-size: 45px; font-family: abril fatface; margin-bottom: 5rem;color: #703b4c;">
+      How Your Donation Helps
+    </h3>
+  </div>
+
+  <div class="donation-card-container">
+    <div class="donation-card">
+      <div class="donation-card-inner">
+        <div class="donation-card-front">INR 25</div>
+        <div class="donation-card-back">
+          <p>
+            Provides educational materials for one child for a month,
+            nurturing their potential.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="donation-card">
+      <div class="donation-card-inner">
+        <div class="donation-card-front">INR 50</div>
+        <div class="donation-card-back">
+          <p>
+            Supports a community wellness program that promotes physical and
+            mental well-being.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="donation-card">
+      <div class="donation-card-inner">
+        <div class="donation-card-front">INR 100</div>
+        <div class="donation-card-back">
+          <p>
+            Funds a workshop that empowers women with skills and knowledge to
+            transform their lives.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="donation-card">
+      <div class="donation-card-inner">
+        <div class="donation-card-front">INR 250</div>
+        <div class="donation-card-back">
+          <p>
+            Facilitates spiritual retreats and seminars, fostering personal
+            growth and enlightenment.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="donation-card extra-center">
+      <div class="donation-card-inner">
+        <div class="donation-card-front">Custom Amount</div>
+        <div class="donation-card-back">
+          <p>
+            Every contribution, no matter the size, plays a vital role in our
+            mission to serve humanity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h1 style="text-align: center; font-size: 3rem; color:#7e4555">
+    Donate Now!!!
+  </h1>
+  <div class="donate-now-container">
+    <div class="qr-section">
+      <h2>Scan QR to Pay</h2>
+      <img src="./images/qr.jpeg" alt="QR Code" class="qr-img">
+      <p><strong>Merchant name:</strong> M/S. JAMBAVANTA FOUNDATION</p>
+      <p><strong>UPI ID:</strong> MSJAMBAVANTAFOUNDATION.eazypay@icici</p>
+    </div>
+
+    <div class="donation-form">
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="email">Email*</label>
+        <input type="email" id="email" placeholder="Enter your email address" required>
+
+        <label for="phone">Phone Number*</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+        <label for="amount">Select an Amount*</label>
+        <select id="amount" required>
+          <option value="">Select an amount</option>
+          <option>INR 25</option>
+          <option>INR 50</option>
+          <option>INR 100</option>
+          <option>INR 250</option>
+        </select>
+
+        <button type="submit">PAY NOW</button>
+      </form>
+    </div>
+  </div>
+  <div id="seven_bg">
+    <div id="sevendiv">
+      <div style="padding-top: 5rem; padding-left: 17rem">
+        <h1 class="Testimonial">
+          Testimonials </h1>
+      </div>
+    </div>
+    <div class="card-container_1">
+      <div class="card">
+        <h3 style="
+              color: #7e4555;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              margin-left: 1rem;
+            ">
+          Ananya
+          </h1>
+          <span style="font-weight: 100;color: #777;margin-left: 1rem;">Program Participant</span>
+          <p style="
+            color: rgb(156, 125, 25);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;margin-left: 1rem;width: 25rem;"> "The Jambavanta Foundation has helped me find my strength
+            and
+            purpose.
+            Their support has changed my life, and I am forever grateful." </p>
+      </div>
+      <div class="card">
+        <h3 style="
+              color: #7e4555;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              margin-left: 1rem;
+            ">
+          Ravi
+          </h1>
+          <span style="font-weight: 100;color: #777;margin-left: 1rem;">Volunteer</span>
+
+          <p style="
+            color: rgb(156, 125, 25);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;margin-left: 1rem;width: 25rem;">"Volunteering here has been a transformative experience. It's
+            incredible to see the impact
+            we can make when we believe in ourselves and others."
+          </p>
+      </div>
+    </div>
+  </div>
+  <div class="desc1">
+    <h3 style="font-size: 38px; font-family: abril fatface;color: #44233b;">Join Us in Our Mission
+    </h3>
+    <h3>Your Generosity is a Beacon of Hope
+
+    </h3>
+
+    <p>
+      <i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“All power is within you; you can do anything and everything. Believe in that.” </i><b
+        style="font-size: 20px"> - Swami Vivekananda</b>
+    </p>
+    <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 25px;
+          color: #777;
+        ">
+      By supporting the Jambavanta Foundation, you are joining a community dedicated to awakening the potential within
+      every individual and transforming lives through service, education, and empowerment. Your generosity is a powerful
+      testament to the strength of the human spirit and the compassion that binds us all.
+    </p>
+  </div>
+  <div class="desc2">
+    <h3 style="font-size: 38px; font-family: abril fatface;color: #44233b;padding-top: 3rem;">Ways to Give
+    </h3>
+    <h3 style="padding-bottom: 2rem;">Your Support Makes Our Work Possible
+    </h3>
+    <ul>
+      <li><b style="font-size: 20px;"> One-Time Donation:</b>
+        <p style="color: #777;font-size: 20px;">Make an immediate impact with a single contribution.
+        </p>
+      </li>
+      <li><b style="font-size: 20px;">Monthly Giving:</b>
+        <p style="color: #777;font-size: 20px;">Join our community of monthly donors and sustain our programs
+          year-round.
+
+        </p>
+
+      </li>
+      <li><b style="font-size: 20px;">Legacy Giving:</b>
+        <p style="color: #777;font-size: 20px;">Leave a lasting legacy of empowerment and change by including the
+          Jambavanta Foundation
+          in
+          your estate plans.
+
+        </p>
+
+      </li>
+      <li><b style="font-size: 20px;"> Sponsorship:</b>
+        <p style="color: #777;font-size: 20px;">Partner with us to amplify your impact and support our mission through
+          corporate
+          giving.
+        </p>
+
+      </li>
+    </ul>
+    <button class="btn2">Explore
+      Ways To Give</button>
+  </div>
+  <div class="footer-container">
+    <div class="footer-about">
+      <h2>About Us</h2>
+      <p>
+        Our journey began with a vision to awaken the Hanuman within every
+        individual, empowering them to discover their inner strength and
+        purpose. Inspired by Swami Vivekananda’s teachings and the timeless
+        wisdom of the Ramayana, we strive to create a world where knowledge,
+        courage, and compassion illuminate the path to success.
+      </p>
+      <p>
+        <span class="footer-icon">📞</span> <strong>987-987-930-302</strong>
+      </p>
+      <p>
+        <span class="footer-icon">✉️</span>
+        <strong>gaurav.tripathi@jambavantafoundation.org</strong>
+      </p>
+      <p><span class="footer-icon">📍</span> <strong>India</strong></p>
+    </div>
+
+    <div class="footer-links">
+      <h2>Others</h2>
+      <ul>
+        <li>ॐ Home</li>
+        <li>ॐ About Us</li>
+        <li>ॐ Projects</li>
+        <li>ॐ Events</li>
+        <li>ॐ Blog</li>
+        <li>ॐ Media</li>
+        <li>ॐ Donate Us</li>
+        <li>ॐ Contact Us</li>
+        <li>ॐ Get Involved</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>

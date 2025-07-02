@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css" />
+  <title>Projects | Jambavanta Foundation</title>
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+
+    #Empower {
+      background-image: url(./images/trishul-bgimg.png);
+      width: 100%;
+      height: 1000px;
+      /* Adjust height as needed */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .content {
+      font-weight: 400;
+      margin-top: 1rem;
+      color: #000000ba;
+      font-size: 20px;
+    }
+
+
+
+    .card-container,
+    .card-container_1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      max-width: 70%;
+      margin: 50px auto;
+      padding: 0 1rem;
+    }
+
+    .card,
+    .card1 {
+      height: 15rem;
+      padding: 1rem;
+      font-weight: bold;
+      border: 2px solid #444;
+      border-radius: 10px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+
+    .card {
+      background-color: #ffc6f997;
+    }
+
+    .card1 {
+      background-color: white;
+    }
+
+    .card:hover,
+    .card1:hover {
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    /* Responsive media query for tablets and below */
+    @media screen and (max-width: 768px) {
+
+      .card-container,
+      .card-container_1 {
+        grid-template-columns: 1fr;
+        /* Stack cards vertically */
+        gap: 1.5rem;
+      }
+
+      .card,
+      .card1 {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+
+      #Empower {
+        height: 100rem;
+      }
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding: 4rem 5rem;
+      background-image: url(".//images/footter_bgimg.jpeg");
+      width: 87%;
+      height: 500px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+  </style>
+
+  <script src="./jambavanta.js"></script>
+
+</head>
+
+<body>
+  <nav class="navbar pagination">
+    <img src=".//images/logo.jpg" alt="Logo" class="logo" />
+    <div id="navbar-elements">
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_home.html">Home</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_about.html">About us</a>
+      <a class="active" href="">Projects</a>
+
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_media.html">Media</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_donate.html">Donate us</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_contact.html">Contact us</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_getinvolved.html">Get Involved</a>
+      <button onclick="navigateToDonateNow()" class="donate-now-btn">
+        Donate Now
+      </button>
+    </div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_about.html">About</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_projects.html">Projects</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_media.html">Media</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_donate.html">Donate</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_contact.html">Contact</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_getinvolved.html">Get Involved</a>
+    </div>
+    <div id="hamburger" onclick="openNav()">&#9776;</div>
+  </nav>
+
+  <div class="common-first-image basic-div-section">
+    <div class="heading-wrapper">
+      <h1 class="heading">
+        Projects | Jambavant Foundation
+      </h1>
+    </div>
+  </div>
+
+  <div id="Empower">
+    <div style="margin-left: 5rem; padding-top: 2rem">
+      <h3 style="
+            font-size: 20px;
+            color: antiquewhite;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          ">
+        OUR PROGRAMS
+      </h3>
+      <h1 style="
+            font-size: 3rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+          ">
+        Empowering Lives Through Action
+      </h1>
+      <h4 class="content" style="color: rgb(248, 251, 251)">
+        <i>“All the powers in the universe are already ours. It is we who have
+          put our hands before our eyes and cry that it is dark.”</i><b> – Swami Vivekananda</b>
+      </h4>
+    </div>
+    <div class="card-container">
+      <div class="card">
+        <h3 style="
+              color: #7e4555;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+          Educational Initiatives
+          </h1>
+          <p style="
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">we provide educational opportunities and resources to empower individuals with the knowledge
+            and skills needed for success
+          </p>
+      </div>
+      <div class="card1">
+        <h3 style="
+              color: rgb(236, 22, 7);
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+          Spiritual Growth </h1>
+          <p style="
+            color:#a3a4a3;
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">Our programs encourage self-discovery and spiritual enlightenment, helping individuals
+            connect with their inner divinity.
+          </p>
+      </div>
+      <div class="card1">
+        <h3 style="
+              color: rgb(236, 22, 7);
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+          Community Development </h1>
+          <p style="
+            color: #a3a4a3;
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">We organize events and workshops that foster community engagement, collaboration, and social
+            responsibility.
+          </p>
+      </div>
+
+      <div class="card">
+        <h3 style="
+              color: rgb(236, 22, 7);
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+          Youth Empowerment </h1>
+          <p style="
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">We focus on inspiring the younger generation to realize their potential and lead impactful
+            lives, drawing inspiration from the
+          </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-about">
+      <h2>About Us</h2>
+      <p>
+        Our journey began with a vision to awaken the Hanuman within every individual, empowering them to discover their
+        inner strength and purpose. Inspired by Swami Vivekananda’s teachings and the timeless wisdom of the Ramayana,
+        we strive to create a world where knowledge, courage, and compassion illuminate the path to success.
+      </p>
+      <p><span class="footer-icon">📞</span> <strong>987-987-930-302</strong></p>
+      <p><span class="footer-icon">✉️</span> <strong>gaurav.tripathi@jambavantafoundation.org</strong></p>
+      <p><span class="footer-icon">📍</span> <strong>India</strong></p>
+
+    </div>
+
+    <div class="footer-links">
+      <h2>Others</h2>
+      <ul>
+        <li>ॐ Home</li>
+        <li>ॐ About Us</li>
+        <li>ॐ Projects</li>
+        <li>ॐ Events</li>
+        <li>ॐ Blog</li>
+        <li>ॐ Media</li>
+        <li>ॐ Donate Us</li>
+        <li>ॐ Contact Us</li>
+        <li>ॐ Get Involved</li>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>

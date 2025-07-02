@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css" />
+  <title>Jambavanta Foundation</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    #jambavanta-home-page-1 {
+      background-image: url("./images/om-homepage.jpg");
+    }
+
+    /* Main text styles */
+    .home-text-content {
+      padding-top: 15rem;
+      padding-left: 5rem;
+    }
+
+    .home-heading {
+      color: blanchedalmond;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 3rem;
+    }
+
+    .home-subtext {
+      color: antiquewhite;
+      font-size: 20px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 65%;
+      margin-top: 1rem;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 768px) {
+      .home-text-content {
+        padding-left: 1rem;
+        padding-top: 10rem;
+      }
+
+      .home-heading,
+      .home-subtext {
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    #secondDivImage {
+      background-image: url("./images/hanuman_mountain.avif");
+      width: 50%;
+      height: 300px;
+      /* Adjust height as needed */
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      top: 5rem;
+
+
+      /* background-position: center; */
+    }
+
+    @media screen and (max-width: 768px) {
+      #secondDivImage {
+        display: none;
+      }
+
+    }
+
+    #thirdDiv {
+      background-image: url("./images/trishul-bgimg.png");
+      height: 900px;
+    }
+
+    /* Image sections - default (visible on larger screens) */
+    #fourthdivimg {
+      background-image: url("./images/ganpatiji.jpg");
+      width: 35%;
+      height: 400px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      top: 5rem;
+      left: 100px;
+    }
+
+    #fivthdivimg {
+      background-image: url("./images/shankarji.jpg ");
+      width: 40%;
+      height: 500px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: relative;
+      top: 1rem;
+    }
+
+    /* Responsive behavior for both divs (hide images) */
+    @media screen and (max-width: 768px) {
+
+      #fourthdivimg,
+      #fivthdivimg {
+        display: none;
+      }
+
+      .column {
+        width: 100% !important;
+        float: none;
+        padding: 0 !important;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 3rem !important;
+      }
+    }
+
+
+    #sixthdivimg {
+      background-image: url("./images/sitting-hanuman.jpg");
+      width: 30%;
+      height: 500px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      top: 5rem;
+      left: 90px;
+      border-radius: 60px;
+    }
+
+    /* Container style remains same */
+    #sixthdiv {
+      background-color: antiquewhite;
+      width: 97.4%;
+      height: 700px;
+      background-size: cover;
+    }
+
+    /* ✅ Responsive: Hide image and make content full width */
+    @media screen and (max-width: 768px) {
+      #sixthdivimg {
+        display: none;
+      }
+
+      .column {
+        width: 100% !important;
+        float: none;
+        padding: 0 1rem !important;
+      }
+
+      #sixthdiv {
+        height: auto;
+        /* Let height adjust automatically */
+        padding: 2rem 1rem;
+      }
+
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 2rem !important;
+      }
+    }
+
+    #sevendiv {
+      padding: 5rem 1rem 2rem;
+      text-align: center;
+    }
+
+    .congregation-title {
+      color: #44233b;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 2.5rem;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+      .congregation-title {
+        font-size: 1.8rem;
+        max-width: 90%;
+      }
+
+      #sevendiv {
+        padding-top: 3rem;
+      }
+    }
+
+    .content {
+      font-weight: 400;
+      margin-top: 1rem;
+      color: #000000ba;
+      font-size: 20px;
+    }
+
+    .card-container,
+    .card-container_1 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      max-width: 80%;
+      margin: 50px auto;
+      padding: 0 1rem;
+    }
+
+    .card,
+    .card1,
+    .card2 {
+      height: auto;
+      padding: 1rem;
+      font-weight: 300px;
+      border: 2px solid #444;
+      border-radius: 10px;
+      overflow: hidden;
+      word-wrap: break-word;
+    }
+
+    .card {
+      background-color: #eadcd38f;
+    }
+
+    .card1 {
+      background-color: white;
+    }
+
+    .card2 {
+      background-color: #db4242;
+    }
+
+    .card:hover,
+    .card1:hover,
+    .card2:hover {
+      box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+        0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    /* Responsive media query for tablets and below */
+    @media screen and (max-width: 768px) {
+
+      .card-container,
+      .card-container_1 {
+        grid-template-columns: 1fr;
+        /* Stack cards vertically */
+        gap: 1.5rem;
+      }
+
+      .card,
+      .card1 {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+
+      #thirdDiv {
+        height: 80rem;
+      }
+    }
+
+    /* #hamburger {
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 1rem;
+        display: none;
+      } */
+
+    @media screen and (max-width: 768px) {
+      #navbar-elements {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 769px) {
+      #sidenav {
+        display: none;
+      }
+    }
+
+    #helpSection {
+      width: 100vw;
+      height: 700px;
+      background-color: #773f52;
+      padding: 3rem 1rem;
+      position: relative;
+      color: white;
+      box-sizing: border-box;
+      margin-top: 5rem;
+    }
+
+    #helpSection h3 {
+      color: #ffb3ab;
+      font-size: 18px;
+      margin: 0;
+    }
+
+    #helpSection h1 {
+      font-size: 3rem;
+      margin: 0.5rem 0 2rem 0;
+      color: #fff;
+    }
+
+    .help-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .help-box {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .help-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      padding: 1rem;
+      color: #fff;
+    }
+
+    .help-email {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .help-newsletter form {
+      display: flex;
+      max-width: 100%;
+      margin-top: 10px;
+    }
+
+    .help-newsletter input[type="email"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px 0 0 5px;
+      font-size: 16px;
+    }
+
+    .help-newsletter button {
+      padding: 10px 15px;
+      background-color: #4d2b3a;
+      color: white;
+      border: none;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .help-kalash,
+    .help-trishul {
+      position: absolute;
+      width: 120px;
+      bottom: -20px;
+    }
+
+
+    @media screen and (max-width: 768px) {
+      .help-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .help-kalash,
+      .help-trishul {
+        display: none;
+      }
+
+      .help-newsletter form {
+        flex-direction: column;
+      }
+
+      .help-newsletter input[type="email"],
+      .help-newsletter button {
+        width: 100%;
+        border-radius: 5px;
+        margin-top: 0.5rem;
+      }
+    }
+
+    #contact-section {
+      /* background: linear-gradient(to bottom right, #712e3b, #3a151a); */
+      background-image: url("./images/red-shankar-bgimg.jpg");
+      width: 100%;
+      height: 600px;
+      /* Adjust height as needed */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 4rem 1rem;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+    .contact-form {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 800px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(5px);
+      text-align: center;
+    }
+
+    .contact-form h1 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-row input {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      min-height: 120px;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      background-color: #a14a63;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #88384f;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 3rem;
+      padding: 4rem 5rem;
+      background-color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .footer-about {
+      flex: 1;
+      min-width: 280px;
+      max-width: 600px;
+    }
+
+    .footer-about h2,
+    .footer-links h2 {
+      color: #44233b;
+      font-size: 28px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-about p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .footer-icon {
+      margin-right: 8px;
+    }
+
+    .footer-links {
+      flex: 1;
+      min-width: 200px;
+      margin-left: 10rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links li {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 0.5rem;
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: 400;
+    }
+
+    .footer-links li:hover {
+      color: black;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        padding: 2rem;
+      }
+
+      .footer-about,
+      .footer-links {
+        max-width: 100%;
+      }
+
+      .footer-links {
+        padding-top: 2rem;
+      }
+    }
+
+
+    .footer-bottom {
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 5rem;
+      flex-wrap: wrap;
+      background-color: #fff;
+    }
+
+    .footer-bottom-left p {
+      color: #6c6c6c;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .footer-bottom-right a {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 48px;
+      height: 48px;
+      margin-left: 10px;
+      background-color: #f8f8f8;
+      border-radius: 50%;
+      text-decoration: none;
+      color: #d94135;
+      font-size: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-bottom-right a:hover {
+      background-color: #f0e7e7;
+      transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 768px) {
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1rem;
+      }
+
+      /* .footer-bottom-right {
+    display: flex;
+    /* justify-content: start; */
+      /* flex-wrap: wrap; 
+  } */
+
+      .footer-bottom-right a {
+        margin: 6px 6px;
+      }
+    }
+  </style>
+  <script src="./jambavanta.js"></script>
+</head>
+
+<body>
+  <nav class="navbar pagination">
+    <img src=".//images/logo.jpg" alt="Logo" class="logo" onclick="navigateToHomePage()" />
+    <div id="navbar-elements">
+      <a class="active" href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_home.html">Home</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_about.html">About us</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_projects.html">Projects</a>
+      <!-- <a href="">events</a>
+      <a href="">Blog</a> -->
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_media.html">Media</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_donate.html">Donate us</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_contact.html">Contact us</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_getinvolved.html">Get Involved</a>
+      <button onclick="navigateToDonateNow()" class="donate-now-btn">
+        Donate Now
+      </button>
+    </div>
+    <!-- START: This section is for mobile devices -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_about.html">About</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_projects.html">Projects</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_media.html">Media</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_donate.html">Donate</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_contact.html">Contact</a>
+      <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_getinvolved.html">Get Involved</a>
+
+    </div>
+    <div id="hamburger" onclick="openNav()">&#9776;</div>
+    <!-- END -->
+  </nav>
+
+  <div id="jambavanta-home-page-1" class="basic-div-section">
+    <div class="home-text-content">
+      <h1 class="home-heading">Jambavanta Foundation</h1>
+      <p class="home-subtext">
+        Inspired by the wisdom of
+        <b style="color: rgb(232, 182, 108)"> Jambavant Ji</b> and
+        <b style="color: rgb(232, 182, 108)">Swami Vivekananda's</b> visionary
+        teachings, we empower communities to cultivate a compassionate world.
+      </p>
+    </div>
+  </div>
+
+  <div id="secondDiv" class="row" style="padding: 1rem; margin-top: 3rem">
+    <div class="column" id="secondDivImage">col1</div>
+    <div class="column">
+      <h3 style="color: rgb(222, 56, 23)">JAMBAVANTA FOUNDATION</h3>
+      <h1 style="font-size: 3rem; color: #444">
+        Welcome to the Jambavanta Foundation
+      </h1>
+      <h4 class="content">
+        <i>
+          “The whole secret of existence is to have no fear. Never fear what
+          will become of you, depend on no one. Only the moment you reject all
+          help are you freed.”</i>
+        <b>– Swami Vivekananda</b>
+      </h4>
+      <h4 class="content">
+        We believe that every individual possesses an untapped reservoir of
+        strength and potential. Inspired by the timeless wisdom of the
+        Ramayana and the teachings of Swami Vivekananda, our mission is to
+        awaken the Hanuman within each of us, empowering individuals to
+        overcome obstacles and achieve greatness.
+      </h4>
+      <h4 class="content">
+        In the epic tale of the Ramayana, Jambavanta, the wise bear king,
+        played a pivotal role in reminding Hanuman of his divine powers. This
+        moment of awakening serves as a powerful metaphor for our foundation’s
+        mission: to inspire individuals to realize their potential and make a
+        meaningful impact on the world.
+      </h4>
+    </div>
+  </div>
+  <div id="thirdDiv" class="basic-div-section">
+    <div style="margin-left: 5rem; padding-top: 2rem">
+      <h3 style="
+            font-size: 20px;
+            color: antiquewhite;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+              'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+          ">
+        OUR PROGRAMS
+      </h3>
+      <h1 style="
+            font-size: 3rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+          ">
+        Empowering Lives Through Action
+      </h1>
+      <h4 class="content" style="color: rgb(248, 251, 251)">
+        <i>“All the powers in the universe are already ours. It is we who have
+          put our hands before our eyes and cry that it is dark.”</i><b> – Swami Vivekananda</b>
+      </h4>
+    </div>
+    <div class="card-container">
+      <div class="card">
+        <h3 style="
+              color: #ffffff;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+          Educational Initiatives
+          </h1>
+          <p style="
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">We provide educational opportunities and resources to empower individuals with the knowledge
+            and skills needed for success
+          </p>
+      </div>
+      <div class="card1">
+        <h3 style="
+              color: rgb(87, 68, 68);
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+          Spiritual Growth </h1>
+          <p style="
+            color:#a3a4a3;
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">Our programs encourage self-discovery and spiritual enlightenment, helping individuals
+            connect with their inner divinity.
+          </p>
+      </div>
+      <div class="card1">
+        <h3 style="
+              color:rgb(87, 68, 68);
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+          Community Development </h1>
+          <p style="
+            color: #a3a4a3;
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">We organize events and workshops that foster community engagement, collaboration, and social
+            responsibility.
+          </p>
+      </div>
+
+      <div class="card2">
+        <h3 style="
+              color: white;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+          Youth Empowerment </h1>
+          <p style="
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">We focus on inspiring the younger generation to realize their potential and lead impactful
+            lives, drawing inspiration from the
+          </p>
+      </div>
+    </div>
+  </div>
+  <div id="fourthdiv" class="row" style="padding: 1rem; margin-top: 3rem">
+    <div class="column" style="padding-left: 3rem;">
+      <!-- <h3 style="color: rgb(222, 56, 23)">JAMBAVANTA FOUNDATION</h3> -->
+      <h1 style="font-size: 3rem; color: #444">
+        Our mission </h1>
+      <h4 class="content">
+        <b>Empower. Educate. Inspire.</b>
+
+      </h4>
+      <h4 class="content">
+        <i>
+          “The whole secret of existence is to have no fear. Never fear what
+          will become of you, depend on no one. Only the moment you reject all
+          help are you freed.”</i>
+        <b>– Swami Vivekananda</b>
+      </h4>
+
+      <h4 class="content" style="word-spacing: 2px;">
+        The Jambavanta Foundation is dedicated to empowering individuals through education, community development,
+        and spiritual growth. By fostering an environment of learning and self-discovery, we aim to inspire individuals
+        to reach their highest potential and contribute to building a compassionate and empowered society.
+      </h4>
+
+    </div>
+    <div class="column" id="fourthdivimg"></div>
+
+  </div>
+  <div id="fivediv" class="row" style="padding: 1rem; margin-top: 3rem">
+    <div class="column" id="fivthdivimg"></div>
+
+    <div class="column" style="padding-left: 5rem;padding-top: 2rem;">
+      <!-- <h3 style="color: rgb(222, 56, 23)">JAMBAVANTA FOUNDATION</h3> -->
+      <h1 style="font-size: 3rem; color: #444">
+        Our Vision </h1>
+      <h4 class="content">
+        <b>Awakening the Hanuman Within.</b>
+
+
+      </h4>
+      <h4 class="content" style="word-spacing: 2px;">
+        <i>
+          “You have to grow from the inside out. None can teach you, none can make you spiritual. There is no other
+          teacher but your own soul.” </i>
+        <b>– Swami Vivekananda</b>
+      </h4>
+
+      <h4 class="content" style="word-spacing: 2px;">
+        Our vision is to create a global community where individuals recognize their inherent divinity and strive for
+        excellence in all aspects of life. We believe in the power of self-realization and seek to inspire a world where
+        each person is equipped to lead a life of fulfillment and purpose.
+      </h4>
+
+    </div>
+
+
+  </div>
+
+  <div id="sixthdiv" class="row" style="padding: 1rem; margin-top: 3rem">
+    <div class="column" style="padding-left: 3rem;">
+      <h3 style="color: rgb(222, 56, 23)">ॐ CHOOSE US</h3>
+      <h1 style="font-size: 3rem; color: #444">
+        Why Jambavanta Foundation? </h1>
+      <h4 class="content">
+        <b>Inspiration from the Ramayana</b>
+
+
+      </h4>
+      <h4 class="content">
+        <i>
+          “There is no one greater in all the worlds than Hanuman, who is the epitome of strength, wisdom, and
+          devotion.” </i>
+        <b>– Valmiki Ramayana</b>
+      </h4>
+
+      <h4 class="content" style="word-spacing: 2px;">
+        The Ramayana teaches us that true strength lies in the realization of our inner divinity. Jambavanta’s wisdom
+        and guidance were instrumental in helping Hanuman recognize his powers and fulfill his mission. At the
+        Jambavanta Foundation, we aim to be the guiding force that awakens the latent potential within every individual.
+      </h4>
+
+      <h4 class="content">
+        <b>Swami Vivekananda’s Teachings</b>
+      </h4>
+
+      <h4 class="content">
+        <i>
+          “Arise, awake, and stop not till the goal is reached.” </i>
+        <b> – Swami Vivekananda</b>
+      </h4>
+
+      <h4 class="content" style="word-spacing: 2px;">
+        Guided by Swami Vivekananda’s vision of empowerment and service, we strive to create a world where individuals
+        are inspired to achieve greatness and serve humanity with love and compassion.
+      </h4>
+
+    </div>
+    <div class="column" id="sixthdivimg"></div>
+
+  </div>
+
+  <div id="sevendiv">
+    <h1 class="congregation-title">
+      What Our Congregation Say!!!
+    </h1>
+  </div>
+  </div>
+  <div class="card-container_1">
+    <div class="card">
+      <h3 style="
+              color: #6b3131;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              ">
+        Ananya
+        </h1>
+        <p style="
+            color: rgb(136 90 57);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">"The Jambavanta Foundation has helped me find my strength and purpose. Their support has
+          changed my life, and I am forever grateful."
+        </p>
+    </div>
+    <div class="card">
+      <h3 style="
+              color: #6b3131;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+            ">
+        Ravi
+        </h1>
+        <p style="
+            color: rgb(136 90 57);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;">"Volunteering here has been a transformative experience. It's incredible to see the impact
+          we can make when we believe in ourselves and others."
+        </p>
+    </div>
+  </div>
+
+  <div id="helpSection">
+    <div style="text-align: center;margin-top: 5rem;">
+      <h3>ॐ WAYS WE CAN HELP ॐ</h3>
+      <h1>We Ready To Help</h1>
+    </div>
+
+    <div class="help-container">
+      <img src="./images/kalsh.jpg" alt="Kalash" class="help-kalash" style="left: 0;">
+
+      <div class="help-box">
+        <h3>Need Help, Email us Now</h3>
+        <p class="help-email">gaurav.tripathi@jambavantafoundation.org</p>
+      </div>
+
+      <div class="help-divider">or</div>
+
+      <div class="help-box help-newsletter">
+        <h3>Our Newsletter</h3>
+        <form>
+          <input type="email" placeholder="Enter email address" required>
+          <button type="submit">&#9993;</button>
+        </form>
+      </div>
+
+      <img src="./images/trishul.jpg" alt="Trishul" class="help-trishul" style="right: 0;">
+    </div>
+  </div>
+  <div id="contact-section">
+    <form class="contact-form">
+      <h1>Contact Us</h1>
+      <div class="form-row">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+      </div>
+      <div class="form-row">
+        <input type="text" placeholder="Subject" required>
+        <input type="email" placeholder="Email Address" required>
+      </div>
+      <textarea placeholder="Enter Message" required></textarea>
+      <button type="submit">Get a Quote →</button>
+    </form>
+  </div>
+
+  <div class="footer-container">
+    <div class="footer-about">
+      <h2>About Us</h2>
+      <p>
+        Our journey began with a vision to awaken the Hanuman within every individual, empowering them to discover their
+        inner strength and purpose. Inspired by Swami Vivekananda’s teachings and the timeless wisdom of the Ramayana,
+        we strive to create a world where knowledge, courage, and compassion illuminate the path to success.
+      </p>
+      <p><span class="footer-icon">📞</span> <strong>987-987-930-302</strong></p>
+      <p><span class="footer-icon">✉️</span> <strong>gaurav.tripathi@jambavantafoundation.org</strong></p>
+      <p><span class="footer-icon">📍</span> <strong>India</strong></p>
+
+    </div>
+
+    <div class="footer-links">
+      <h2>Others</h2>
+      <ul>
+        <li>ॐ Home</li>
+        <li>ॐ About Us</li>
+        <li>ॐ Projects</li>
+        <li>ॐ Events</li>
+        <li>ॐ Blog</li>
+        <li>ॐ Media</li>
+        <li>ॐ Donate Us</li>
+        <li>ॐ Contact Us</li>
+        <li>ॐ Get Involved</li>
+      </ul>
+    </div>
+  </div>
+
+  </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-bottom-left">
+      <p>Copyright © Jambavanta Foundation – 2024</p>
+    </div>
+    <div class="footer-bottom-right">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</body>
+
+</html>

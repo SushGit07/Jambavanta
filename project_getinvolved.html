@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" />
+
+    <title>Get Involved | Jambavant Foundation</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .desc {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+                sans-serif;
+            padding-left: 6rem;
+            margin-top: 6rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .desc {
+                margin-top: 0;
+                padding-left: 1rem;
+            }
+        }
+
+        li {
+            font-size: 20px;
+            color: #44233b;
+            margin-bottom: 0.5rem;
+            font-family: "Times New Roman", Times, serif;
+            font-weight: 400;
+
+        }
+
+        .btn2 {
+            background-color: #7e4555;
+            font-size: 16px;
+            font-weight: 400;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            padding: 1rem;
+            border-radius: 50px;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid;
+        }
+
+        .btn2:hover {
+            cursor: pointer;
+            background-color: crimson;
+            transform: scale(1.05);
+        }
+
+        .testino {
+            background-image: url("./images/testinomial_bg.jpg");
+            width: 100%;
+            height: 500px;
+            /* Adjust height as needed */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.9;
+        }
+
+        .testino h1 {
+            color: #44233b;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 40px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .card-container_1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: rgb(247, 244, 239);
+            font-weight: bold;
+            border: 2px solid #444;
+            border-radius: 10px;
+            box-shadow: 20px 10px 20px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            transition: box-shadow 0.3s ease;
+            height: auto;
+        }
+
+        .card:hover {
+            box-shadow: 20px 17px 28px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            color: #7e4555;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin-bottom: 0.3rem;
+        }
+
+        .card span {
+            font-weight: 100;
+            color: #777;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: rgb(156, 125, 25);
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            line-height: 1.5;
+        }
+
+        /* ✅ Responsive behavior */
+        @media screen and (max-width: 768px) {
+            .card-container_1 {
+                grid-template-columns: 1fr;
+            }
+
+            .test h1 {
+                font-size: 28px;
+                padding: 0 1rem;
+            }
+
+            .card p {
+                font-size: 16px;
+            }
+
+            .testino {
+                height: 850px;
+            }
+        }
+
+        .email_box {
+            width: 40%;
+            border: 1px solid black;
+            text-align: center;
+            margin: auto;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+            height: 250px;
+            border-radius: 10px;
+            background-color: rgb(252, 249, 244);
+
+        }
+
+        .email_box:hover {
+            box-shadow: 20px 17px 28px rgba(0, 0, 0, 0.3);
+            background-image: url(./images/email.jpg);
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .email_box {
+                width: 70%;
+                font-size: 0.95rem;
+                padding: 1.2rem;
+                height: 200px;
+            }
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 3rem;
+            padding: 4rem 5rem;
+            background-image: url(".//images/footter_bgimg.jpeg");
+            width: 87%;
+            height: 500px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-family: "Segoe UI", sans-serif;
+        }
+    </style>
+    <script src="./jambavanta.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar pagination">
+        <img src=".//images/logo.jpg" alt="Logo" class="logo" onclick="navigateToHomePage()" />
+        <div id="navbar-elements">
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_home.html">Home</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_about.html">About us</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_projects.html">Projects</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_media.html">Media</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_donate.html">Donate us</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_contact.html">Contact us</a>
+            <a class="active"
+                href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_getinvolved.html">Get
+                Involved</a>
+            <button onclick="navigateToDonateNow()" class="donate-now-btn">
+                Donate Now
+            </button>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_about.html">About</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_projects.html">Projects</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_media.html">Media</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_donate.html">Donate</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_contact.html">Contact</a>
+            <a href="file:///C:/Users/susha/Downloads/JAVASCRIPT_zip/JAVASCRIPT/project_getinvolved.html">Get
+                Involved</a>
+        </div>
+        <div id="hamburger" onclick="openNav()">&#9776;</div>
+    </nav>
+
+    <div class="common-first-image basic-div-section">
+        <div class="heading-wrapper">
+            <h1 class="heading">
+                Get Involved | Jambavant Foundation
+            </h1>
+        </div>
+    </div>
+    <div style="text-align: center">
+        <h1 style="
+          font-size: 3rem;
+          font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+            'Lucida Sans', Arial, sans-serif;
+          padding-top: 3rem;
+          margin: 1rem 3rem;
+          color: #44233b;
+        ">
+            Awaken Your Inner Strength: Join Us in Transforming Lives
+        </h1>
+    </div>
+
+    <div class="desc">
+        <h3 style="font-size: 40px; font-family: abril fatface;color:#44233b;">Introduction</h3>
+        <p>
+            <i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“Arise, awake, and stop not till the goal is reached.” </i><b style="font-size: 20px"> - Swami
+                Vivekananda</b>
+        </p>
+        <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 25px;
+          color: #777;
+        ">
+            At the Jambavanta Foundation, we are guided by the timeless teachings of Swami Vivekananda, who believed in
+            the boundless potential of every individual. Our mission is to awaken the Hanuman within each person,
+            empowering them to overcome obstacles and achieve greatness. By getting involved, you can help turn this
+            vision into reality and create a ripple effect of positive change in the world.
+        </p>
+        <h3 style="font-size: 40px; font-family: abril fatface;color: #44233b;">Ways to get Involved</h3>
+
+        <h4 style="font-size: 20px;">Volunteer with us:</h4>
+        <p><i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“The greatest sin is to think yourself weak.” </i><b style="font-size: 20px"> - Swami
+                Vivekananda</b>
+        </p>
+        <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 25px;
+          color: #777;
+        ">
+            Volunteering with the Jambavanta Foundation is more than just offering your time—it’s about realizing your
+            inner strength and using it to uplift others. Whether you’re teaching a child, organizing a community event,
+            or distributing resources, your actions can illuminate paths to empowerment and growth.
+        </p>
+        <h4 style="font-size: 20px;">Partner with us:</h4>
+        <p><i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“We are what our thoughts have made us; so take care about what you think. Words are secondary. Thoughts
+                live; they travel far.” </i><b style="font-size: 20px"> - Swami
+                Vivekananda</b>
+        </p>
+        <p style="
+          font-size: 20px;
+          line-height: 1.9;
+          margin-bottom: 25px;
+          color: #777;
+        ">
+            Partnering with the Jambavanta Foundation is an opportunity to align with a mission that resonates with your
+            values and aspirations. We seek partnerships that are based on shared visions of transformation,
+            empowerment, and spiritual growth.
+        </p>
+        <h4 style="font-size: 20px;">Support Our Mission</h4>
+        <p><i style="
+            font-size: 22px;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            color: #777;
+          ">“All power is within you; you can do anything and everything.” </i><b style="font-size: 20px"> - Swami
+                Vivekananda</b>
+        </p>
+        <p style="
+          font-size: 20px;
+          line-height: 1.9; 
+          margin-bottom: 25px;
+          color: #777;
+          
+        ">
+            Your support fuels our mission to awaken the Hanuman within every individual and community. Whether through
+            donations, fundraising, or advocacy, your contributions are essential to sustaining and expanding our
+            programs.
+        <h3 style="font-size: 20px;margin-top: 2rem;color: #44233b;">Why Support Us?</h3>
+        <ul>
+            <li>Empower Lives: Your support directly impacts individuals striving for empowerment and self-realization.
+            </li>
+            <li>Build a Legacy: Contribute to a legacy of change that transforms communities for generations to come.
+            </li>
+            <li>Inspire Hope: Be a source of hope and encouragement for those who seek guidance and opportunity.
+            </li>
+        </ul>
+
+        <h3 style="font-size: 20px;margin-top: 2rem;color: #44233b;">Ways to Support:
+
+        </h3>
+        <ul>
+            <li>Donate: Every contribution, big or small, helps us reach more individuals and communities.
+
+            </li>
+            <li>Fundraise: Organize events or campaigns to raise awareness and resources for our mission.
+            </li>
+            <li>Advocate: Spread the word about our work and encourage others to get involved.
+
+            </li>
+        </ul>
+        <button class="btn2">Support Our Mission</button>
+
+
+
+
+
+
+    </div>
+
+    <div class="testino">
+        <div class="testdiv">
+            <div style="padding-top: 5rem; padding-left: 17rem">
+                <h1 style="
+            color: #44233b;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+           width: 30%; 
+           font-size: 40px;
+           margin-left: 15rem;
+          ">
+                    Testimonials </h1>
+            </div>
+        </div>
+        <div class="card-container_1">
+            <div class="card">
+                <h3 style="
+              color: #7e4555;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              margin-left: 1rem;
+            ">
+                    Ramesh
+                    </h1>
+                    <span style="font-weight: 100;color: #777;margin-left: 1rem;">Donor</span>
+                    <p style="
+            color: rgb(156, 125, 25);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;margin-left: 1rem;width: 25rem;"> “Donating to the Jambavanta Foundation has been a rewarding
+                        experience. Knowing that my contribution is making a real difference in people’s lives is truly
+                        fulfilling.” </p>
+            </div>
+            <div class="card">
+                <h3 style="
+              color: #7e4555;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              margin-left: 1rem;
+            ">
+                    Priya
+                    </h1>
+                    <span style="font-weight: 100;color: #777;margin-left: 1rem;">Program Participant</span>
+
+                    <p style="
+            color: rgb(156, 125, 25);
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+              sans-serif;margin-left: 1rem;width: 25rem;">“Thanks to the support of the Jambavanta Foundation, I have
+                        found new hope and strength in my life. Their programs have changed my perspective and given me
+                        the tools to succeed.”
+                    </p>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+        <h1 style="text-align: center;color: #444;font-size: 3rem;padding-top: 4rem;">Contact Us</h1>
+
+        <div class="email_box">
+
+            <h2
+                style="font:20px;font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;padding-top: 3rem;">
+                Email
+                address</h2>
+
+            <p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: larger;">
+                gaurav.tripathi@jambavantafoundation.org</p>
+        </div>
+    </div>
+    </div>
+    <div class="footer-container">
+        <div class="footer-about">
+            <h2>About Us</h2>
+            <p>
+                Our journey began with a vision to awaken the Hanuman within every
+                individual, empowering them to discover their inner strength and
+                purpose. Inspired by Swami Vivekananda’s teachings and the timeless
+                wisdom of the Ramayana, we strive to create a world where knowledge,
+                courage, and compassion illuminate the path to success.
+            </p>
+            <p>
+                <span class="footer-icon">📞</span> <strong>987-987-930-302</strong>
+            </p>
+            <p>
+                <span class="footer-icon">✉️</span>
+                <strong>gaurav.tripathi@jambavantafoundation.org</strong>
+            </p>
+            <p><span class="footer-icon">📍</span> <strong>India</strong></p>
+        </div>
+
+        <div class="footer-links">
+            <h2>Others</h2>
+            <ul>
+                <li>ॐ Home</li>
+                <li>ॐ About Us</li>
+                <li>ॐ Projects</li>
+                <li>ॐ Events</li>
+                <li>ॐ Blog</li>
+                <li>ॐ Media</li>
+                <li>ॐ Donate Us</li>
+                <li>ॐ Contact Us</li>
+                <li>ॐ Get Involved</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
